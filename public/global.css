@@ -1,0 +1,29 @@
+
+* {
+    margin: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.root {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    gap: 10px;
+}
+
+form {
+    display: flex;
+    flex-flow: column;
+}
+
+.button {
+    margin-top: 7px;
+}
