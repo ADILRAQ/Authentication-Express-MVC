@@ -7,7 +7,7 @@ const app = express();
 
 app.use(bodyParser.urlencoded({extended: true}));
 
-// Select view type which is ejs
+// Select view engine type which is ejs
 app.set('view engine', 'ejs');
 
 // set the views path
