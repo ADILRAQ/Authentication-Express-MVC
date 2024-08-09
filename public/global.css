@@ -1,17 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+
+:root {
+    --J_yellow: #e8e300;
+    --J_dark: #105d5e;
+    --J_light: #009A6E;
+    --J_morelight: #b3eda9;
+}
 
 * {
     margin: 0;
 }
 
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100vw;
-    height: 100vh;
+    background-color: var(--J_light);
+    font-family: "Abril Fatface", serif;
+    font-style: normal;
+    font-weight: 400;
+    color: var(--J_morelight);
+    text-shadow: 2px 4px var(--J_dark);
 }
 
 .root {
+    width: 100vw;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -24,10 +35,24 @@ form {
     flex-flow: column;
 }
 
+label {
+    text-shadow: none;
+}
+
 .button {
     margin-top: 7px;
 }
 
 .logout {
     padding: 6px 12px;
+    border-style: none;
+    border-radius: 5px;
+    background-color: var(--J_morelight);
+    color: var(--J_dark);
+}
+
+.logout:hover {
+    background-color: var(--J_dark);
+    box-shadow: 3px 3px var(--J_light), 6px 6px var(--J_yellow);
+    color: var(--J_morelight);
 }

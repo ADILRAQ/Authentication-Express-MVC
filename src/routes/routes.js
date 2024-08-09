@@ -1,10 +1,10 @@
 const { handleLogout } = require('../controllers/logout.controller');
 const { handleSignin } = require('../controllers/signin.controller');
-
+const authorization = require('../middlewares/authorization');
 const router = require('express').Router();
 
-router.get("/", (req, res) => {
-    res.render('home', {username: 'Adil'});
+router.get("/", authorization, (req, res) => {
+    res.status(200).render('home', {username: req.user.username});
 });
 
 router.get('/signin', (req, res) => {

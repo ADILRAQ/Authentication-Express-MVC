@@ -2,10 +2,13 @@ const express = require('express');
 const router = require('./routes/routes');
 const path = require('path');
 const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser');
 
 const app = express();
 
 app.use(bodyParser.urlencoded({extended: true}));
+
+app.use(cookieParser());
 
 // Select view engine type which is ejs
 app.set('view engine', 'ejs');

@@ -1,21 +1,22 @@
 const jwt = require('jsonwebtoken');
+const user = require('../models/users.model');
 
 const handleSignin = (req, res) => {
-    // console.log(req.body);
+
     const {username, password} = req.body;
-    console.log({username, password});
 
     try {
 
-    const token = jwt.sign({  }, '', { expiresIn: '5m' });
+        if (!username || !password)
+            throw new Error("Invalid data !");
 
-    console.log(token);
+        user.set(username, password);
+        const token = jwt.sign({ username, password }, 'secretkey', { expiresIn: '1m' });
+        res.cookie('access', token, {httpOnly: true, secure: false, sameSite: 'Strict'});
+        res.redirect('/');
 
-    // res.cookies('token', token, {httpOnly: true, secure: false, sameSite: 'Strict'});
-    res.redirect('/');
-    // res.send(token);
     } catch (e) {
-        res.status(400).send('SOmething Bad !');
+        res.status(400).send('Something Bad !');
     }
 }
 
