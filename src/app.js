@@ -1,6 +1,9 @@
+const path = require('path');
+const dotenv = require('dotenv');
+dotenv.config({path: path.resolve(__dirname, '..', '.env')});
 const express = require('express');
 const router = require('./routes/routes');
-const path = require('path');
+const googleRouter = require('./routes/google.routes');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 
@@ -19,6 +22,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, '..', 'public')));
 
 app.use(router);
+app.use('/google', googleRouter);
 
 app.listen('3001', (err) => {
 	if (err) {

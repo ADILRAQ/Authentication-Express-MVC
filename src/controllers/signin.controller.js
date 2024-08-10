@@ -1,5 +1,5 @@
-const jwt = require('jsonwebtoken');
 const user = require('../models/users.model');
+const { createAccess } = require('../utils/jwt');
 
 const handleSignin = (req, res) => {
 
@@ -11,11 +11,12 @@ const handleSignin = (req, res) => {
             throw new Error("Invalid data !");
 
         user.set(username, password);
-        const token = jwt.sign({ username, password }, 'secretkey', { expiresIn: '1m' });
-        res.cookie('access', token, {httpOnly: true, secure: false, sameSite: 'Strict'});
+        const token = createAccess({username, password});
+        res.cookie('access', token, {httpOnly: true, secure: false, path: '/'});
         res.redirect('/');
 
     } catch (e) {
+        // console.log(e);
         res.status(400).send('Something Bad !');
     }
 }

@@ -9,12 +9,11 @@ const authorization = (req, res, next) => {
 		return ;
 	}
 
-	jwt.verify(access, 'secretkey', (err, decoded) => {
+	jwt.verify(access, process.env.SECRET, (err, decoded) => {
 		if (err) {
 			res.redirect('/signin');
 			return ;
 		}
-		console.log('Helli');
 		const {username, password} = decoded;
 		req.user = {username, password};
 		next();

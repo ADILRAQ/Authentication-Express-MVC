@@ -5,7 +5,6 @@ class User {
     instance;
 
     constructor() {
-        console.log('Created !');
         this.users = new Map();
         this.instance = null;
     }
