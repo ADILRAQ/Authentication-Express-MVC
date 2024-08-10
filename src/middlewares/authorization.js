@@ -10,6 +10,8 @@ const authorization = (req, res, next) => {
 	}
 
 	jwt.verify(access, process.env.SECRET, (err, decoded) => {
+		// The token could be checkd if it's expired too
+		// and create a new token instead of redirecting the response to the signin
 		if (err) {
 			res.redirect('/signin');
 			return ;

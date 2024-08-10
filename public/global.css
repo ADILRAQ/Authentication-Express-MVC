@@ -1,10 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
 :root {
     --J_yellow: #e8e300;
     --J_dark: #105d5e;
     --J_light: #009A6E;
     --J_morelight: #b3eda9;
+    --black: #000000;
+    --white: #FFFFFF;
 }
 
 * {
@@ -12,10 +14,11 @@
 }
 
 body {
-    background-color: var(--J_light);
-    font-family: "Abril Fatface", serif;
-    font-style: normal;
-    font-weight: 400;
+    background-image: url("./background.svg");
+    background-repeat:no-repeat;
+    background-size:cover;
+
+    font-family: "Rubik", sans-serif;
     color: var(--J_morelight);
     text-shadow: 2px 4px var(--J_dark);
 }
@@ -28,48 +31,52 @@ body {
     align-items: center;
     flex-flow: column;
     gap: 10px;
-    /* From https://css.glass */
-    /* background: rgba(0, 0, 0, 0.21);
-    border-radius: 16px;
+    background: rgba(0, 0, 0, 0.21);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(3.2px);
-    -webkit-backdrop-filter: blur(3.2px); */
+    -webkit-backdrop-filter: blur(3.2px);
+}
+
+h1 {
+    font-size: 70px;
+    margin-bottom: 20px;
 }
 
 form {
+    width: 200px;
     display: flex;
     flex-flow: column;
+    gap: 6px;
 }
 
-label {
-    text-shadow: none;
-    color: var(--J_morelight);
+input:not([type="submit"]) {
+    height: 25px;
+    border-radius: 5px;
+    padding-left: 6px;
+    border: 2px solid var(--J_dark);
+    background-color: transparent;
+    color: var(--black);
 }
 
-#username, #password {
-    border-radius: 2px;
-    border-style: none;
-    background-color: beige;
-    height: 20px;
+input:not([type="submit"]):focus {
+    border-color: var(--J_yellow);
 }
 
-.button {
-    margin-top: 7px;
+::placeholder {
+    color: var(--J_dark);
 }
 
-.google {
+button, input[type="submit"] {
     margin-top: 5px;
-}
-
-.logout {
     padding: 6px 12px;
     border-style: none;
     border-radius: 5px;
     background-color: var(--J_morelight);
     color: var(--J_dark);
+    transition: .3s;
 }
 
-.logout:hover {
+button:hover, input[type="submit"]:hover {
     background-color: var(--J_dark);
     box-shadow: 3px 3px var(--J_light), 6px 6px var(--J_yellow);
     color: var(--J_morelight);
