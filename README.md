@@ -54,7 +54,7 @@ git clone https://github.com/yourusername/authentication-project.git
 * cd authentication-project
 * Install dependencies:
 > npm install
--* Running the Project, to start the development server, run:
+* Running the Project, to start the development server, run:
 
 > npm start
 
