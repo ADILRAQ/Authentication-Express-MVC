@@ -1,4 +1,4 @@
-const users = require('../models/users.model');
+const users = require('../models/userSingleton');
 
 const handleLogout = (req, res) => {
 

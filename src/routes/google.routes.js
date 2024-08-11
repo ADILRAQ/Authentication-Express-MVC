@@ -1,7 +1,7 @@
 const router = require('express').Router();
-const { googleSignin, getData } = require('../controllers/google.controller');
+const { googleSignup, getData } = require('../controllers/google.controller');
 
-router.get('/signin', googleSignin);
+router.get('/signup', googleSignup);
 
 router.get('/callback', getData);
 

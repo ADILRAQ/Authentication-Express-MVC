@@ -5,6 +5,6 @@ if (btn) {
         fetch('http://localhost:3001/logout', {
             method: 'POST',
             credentials: 'include',
-        }).then(window.location.href = '/signin');
+        }).then(window.location.href = '/signup');
     });
 }

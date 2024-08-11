@@ -20,7 +20,7 @@ body {
 
     font-family: "Rubik", sans-serif;
     color: var(--J_morelight);
-    text-shadow: 2px 4px var(--J_dark);
+    text-shadow: 3px 4px var(--J_dark);
 }
 
 .root {
