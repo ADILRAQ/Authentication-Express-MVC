@@ -54,6 +54,9 @@ git clone git@github.com:ADILRAQ/Authentication-Express-MVC.git
 * cd Authentication-Express-MVC.git
 * Install dependencies:
 > npm install
+* this video explaining how to get the keys for .env file
+[link](https://www.youtube.com/watch?v=mvkpshgNgDI&pp=ygUdZ29vZ2xlIGNsb3VkIGNvbnNvbGUgYXBpIGtleSA%3D)
+
 * Running the Project, to start the development server, run:
 
 > npm start
