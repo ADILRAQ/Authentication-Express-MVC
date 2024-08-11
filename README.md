@@ -51,7 +51,7 @@ git clone git@github.com:ADILRAQ/Authentication-Express-MVC.git
 ```
 * Navigate to the project directory:
 
-* cd authentication-project
+* cd Authentication-Express-MVC.git
 * Install dependencies:
 > npm install
 * Running the Project, to start the development server, run:
