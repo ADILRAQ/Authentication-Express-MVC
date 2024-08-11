@@ -47,7 +47,7 @@ This project is an authentication system built using ExpressJs with both manual 
 ### Installation
 * Clone the repository:
 ```
-git clone https://github.com/yourusername/authentication-project.git
+git clone git@github.com:ADILRAQ/Authentication-Express-MVC.git
 ```
 * Navigate to the project directory:
 
